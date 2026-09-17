@@ -1,0 +1,152 @@
+{% load static %}
+
+<!DOCTYPE html> <html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retail | Menú Principal</title>
+
+<link rel="stylesheet" href="{% static 'CSS/menu.css' %}">
+</head> <body>
+<header class="encabezado">
+    <div class="logo-contenedor">
+        <img
+            src="https://cdn.hashnode.com/res/hashnode/image/upload/v1636780048014/niLN2J80j.png"
+            alt="Logo Retail"
+            class="logo"
+        >
+    </div>
+
+    <nav class="navegacion">
+        <a href="/informacion/">Información</a>
+        <a href="/servicios/">Servicios</a>
+        <a href="/precios/">Precios</a>
+    </nav>
+</header>
+
+
+<main class="principal">
+
+    <section class="hero">
+
+        <div class="hero-contenido">
+
+            <span class="etiqueta">
+                RETAIL
+            </span>
+
+            <h1>
+                Soluciones digitales
+                <span>para tu negocio</span>
+            </h1>
+
+            <p>
+                Descubre nuestros servicios, conoce más sobre
+                nosotros y revisa nuestros precios.
+            </p>
+
+            <div class="botones">
+
+                <a href="/servicios/" class="boton boton-principal">
+                    Ver servicios
+                </a>
+
+                <a href="/precios/" class="boton boton-secundario">
+                    Ver precios
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-decoracion">
+
+            <div class="circulo circulo-uno"></div>
+            <div class="circulo circulo-dos"></div>
+            <div class="cuadro"></div>
+
+            <div class="tarjeta-flotante">
+                <span class="icono">✦</span>
+
+                <div>
+                    <strong>Servicios</strong>
+                    <small>Calidad y confianza</small>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="opciones">
+
+        <article class="opcion">
+
+            <div class="icono-opcion">
+                ℹ
+            </div>
+
+            <h2>Información</h2>
+
+            <p>
+                Conoce más sobre nuestro proyecto,
+                nuestra empresa y lo que ofrecemos.
+            </p>
+
+            <a href="/informacion/">
+                Conocer más →
+            </a>
+
+        </article>
+
+
+        <article class="opcion">
+
+            <div class="icono-opcion">
+                ★
+            </div>
+
+            <h2>Servicios</h2>
+
+            <p>
+                Revisa los servicios disponibles y
+                encuentra la solución que necesitas.
+            </p>
+
+            <a href="/servicios/">
+                Ver servicios →
+            </a>
+
+        </article>
+
+
+        <article class="opcion">
+
+            <div class="icono-opcion">
+                $
+            </div>
+
+            <h2>Precios</h2>
+
+            <p>
+                Consulta nuestros precios, descuentos
+                y observaciones de cada servicio.
+            </p>
+
+            <a href="/precios/">
+                Ver precios →
+            </a>
+
+        </article>
+
+    </section>
+
+</main>
+
+
+<footer class="pie">
+
+    <p>
+        © 2026 Retail. Todos los derechos reservados.
+    </p>
+
+</footer>
+</body> </html>

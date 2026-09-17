@@ -1,0 +1,591 @@
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(99, 102, 241, 0.12),
+            transparent 30%
+        ),
+        #f6f8fc;
+
+    color: #1e293b;
+
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.encabezado {
+    width: 100%;
+    height: 80px;
+
+    padding: 0 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-bottom: 1px solid #e5e7eb;
+
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    width: 130px;
+    display: block;
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.navegacion a {
+    position: relative;
+
+    color: #64748b;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.navegacion a:hover,
+.navegacion a.activo {
+    color: #6366f1;
+}
+
+.navegacion a.activo::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 100%;
+    height: 2px;
+
+    background: #6366f1;
+}
+
+
+/* ================================
+   CONTENIDO
+================================ */
+
+.principal {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 80px 30px;
+}
+
+
+/* ================================
+   TÍTULO
+================================ */
+
+.titulo {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 60px;
+}
+
+.etiqueta {
+    display: inline-block;
+
+    padding: 7px 16px;
+
+    margin-bottom: 20px;
+
+    border-radius: 50px;
+
+    background: #eef2ff;
+
+    color: #6366f1;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.titulo h1 {
+    color: #0f172a;
+
+    font-size: clamp(40px, 5vw, 60px);
+
+    line-height: 1.1;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 20px;
+}
+
+.titulo h1 span {
+    color: #6366f1;
+}
+
+.titulo p {
+    color: #64748b;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* ================================
+   GRID DE PRECIOS
+================================ */
+
+.precios {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ================================
+   TARJETA
+================================ */
+
+.tarjeta-precio {
+    padding: 35px 30px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.06);
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.tarjeta-precio::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6366f1,
+            #8b5cf6
+        );
+}
+
+.tarjeta-precio:hover {
+    transform: translateY(-8px);
+
+    border-color: #c7d2fe;
+
+    box-shadow:
+        0 20px 45px rgba(15, 23, 42, 0.12);
+}
+
+
+/* ================================
+   ICONO
+================================ */
+
+.icono {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 15px;
+
+    color: #4f46e5;
+
+    background: #eef2ff;
+
+    font-size: 25px;
+
+    font-weight: 800;
+}
+
+
+/* ================================
+   NOMBRE SERVICIO
+================================ */
+
+.tarjeta-precio h2 {
+    color: #0f172a;
+
+    font-size: 23px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ================================
+   PRECIO
+================================ */
+
+.precio {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 4px;
+
+    margin-bottom: 25px;
+
+    color: #4f46e5;
+}
+
+.simbolo {
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+.numero {
+    font-size: 42px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.moneda {
+    color: #64748b;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* ================================
+   INFORMACIÓN
+================================ */
+
+.informacion-precio {
+    padding-top: 20px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+.dato {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.dato-titulo {
+    color: #64748b;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+.descuento {
+    display: inline-block;
+
+    width: fit-content;
+
+    padding: 5px 10px;
+
+    border-radius: 7px;
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+.dato p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+.separador {
+    height: 18px;
+}
+
+
+/* ================================
+   BOTÓN
+================================ */
+
+.boton {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 13px 20px;
+
+    border-radius: 10px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #8b5cf6
+        );
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+
+/* ================================
+   SIN PRECIOS
+================================ */
+
+.sin-precios {
+    grid-column: 1 / -1;
+
+    padding: 50px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 20px;
+
+    border: 1px solid #e5e7eb;
+}
+
+.sin-precios h2 {
+    margin-bottom: 10px;
+
+    color: #0f172a;
+}
+
+.sin-precios p {
+    color: #64748b;
+}
+
+
+/* ================================
+   GIF
+================================ */
+
+.imagen-precio {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 70px;
+}
+
+.imagen-precio img {
+    width: 140px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+
+/* ================================
+   VOLVER
+================================ */
+
+.volver {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 45px;
+}
+
+.boton-volver {
+    padding: 13px 25px;
+
+    border: 1px solid #c7d2fe;
+
+    border-radius: 10px;
+
+    color: #4f46e5;
+
+    background: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.boton-volver:hover {
+    background: #eef2ff;
+
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.pie {
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background: #0f172a;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+
+    .precios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .encabezado {
+        padding: 0 5%;
+    }
+}
+
+
+/* ================================
+   MÓVIL
+================================ */
+
+@media (max-width: 650px) {
+
+    .encabezado {
+        height: auto;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .logo {
+        width: 115px;
+    }
+
+    .navegacion {
+        gap: 20px;
+    }
+
+    .navegacion a {
+        font-size: 14px;
+    }
+
+    .principal {
+        padding: 60px 20px;
+    }
+
+    .titulo {
+        margin-bottom: 40px;
+    }
+
+    .titulo h1 {
+        font-size: 40px;
+    }
+
+    .precios {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-precio {
+        padding: 30px 25px;
+    }
+}

@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuestros Servicios</title>
+
+    <link rel="stylesheet" href="{% static 'CSS/servicios.css' %}">
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <h1>Nuestros Servicios</h1>
+
+        <div class="servicios">
+
+            {% for servicio in servicios %}
+
+            <article class="servicio">
+
+                <h2>{{ servicio.nombre }}</h2>
+
+                <p>
+                    <strong>ID:</strong>
+                    {{ servicio.id }}
+                </p>
+
+                <p>
+                    <strong>Descripción:</strong>
+                    {{ servicio.descripcion }}
+                </p>
+
+                <p class="precio">
+                    <strong>Precio:</strong>
+                    ${{ servicio.precio }}
+                </p>
+
+                <p>
+                    <strong>Disponibilidad:</strong>
+                    {{ servicio.disponibilidad }}
+                </p>
+
+            </article>
+
+            {% empty %}
+
+            <p>No hay servicios disponibles.</p>
+
+            {% endfor %}
+
+        </div>
+
+        <nav>
+            <a href="/">Volver al menú principal</a>
+        </nav>
+
+    </main>
+
+</body>
+
+</html>

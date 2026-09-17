@@ -1,0 +1,149 @@
+/* Configuración general */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: #333;
+}
+
+
+/* Contenedor principal */
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* Título */
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+
+/* Contenedor de servicios */
+
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+
+/* Tarjeta de cada servicio */
+
+.servicio {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+/* Efecto al pasar el mouse */
+
+.servicio:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Nombre del servicio */
+
+.servicio h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+
+/* Información */
+
+.servicio p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+
+/* Precio */
+
+.servicio .precio {
+    font-size: 1.2rem;
+    color: #764ba2;
+}
+
+
+/* Navegación */
+
+nav {
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+/* Botón volver */
+
+nav a {
+    display: inline-block;
+
+    background-color: white;
+    color: #667eea;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    padding: 12px 25px;
+
+    border-radius: 25px;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Hover del botón */
+
+nav a:hover {
+    background-color: #667eea;
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+
+/* Adaptación para celulares */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 25px 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .contenedor {
+        width: 100%;
+    }
+
+    .servicio {
+        padding: 20px;
+    }
+}

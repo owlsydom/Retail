@@ -1,0 +1,189 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Retail | Precios</title>
+
+    <link rel="stylesheet" href="{% static 'CSS/precios.css' %}">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="encabezado">
+
+        <div class="logo-contenedor">
+            <a href="/">
+                <img
+                    src="https://cdn.hashnode.com/res/hashnode/image/upload/v1636780048014/niLN2J80j.png"
+                    alt="Logo Retail"
+                    class="logo"
+                >
+            </a>
+        </div>
+
+        <nav class="navegacion">
+            <a href="/informacion/">Información</a>
+            <a href="/servicios/">Servicios</a>
+            <a href="/precios/" class="activo">Precios</a>
+        </nav>
+
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <main class="principal">
+
+        <section class="titulo">
+
+            <span class="etiqueta">
+                RETAIL
+            </span>
+
+            <h1>
+                Precios de nuestros
+                <span>servicios</span>
+            </h1>
+
+            <p>
+                Revisa nuestros servicios, precios, descuentos
+                y observaciones.
+            </p>
+
+        </section>
+
+
+        <!-- TARJETAS DE PRECIOS -->
+
+        <section class="precios">
+
+            {% for precio in precios %}
+
+                <article class="tarjeta-precio">
+
+                    <div class="icono">
+                        $
+                    </div>
+
+                    <h2>
+                        {{ precio.servicio.nombre }}
+                    </h2>
+
+                    <div class="precio">
+
+                        <span class="simbolo">$</span>
+
+                        <span class="numero">
+                            {{ precio.precio }}
+                        </span>
+
+                        <span class="moneda">
+                            {{ precio.moneda }}
+                        </span>
+
+                    </div>
+
+
+                    <div class="informacion-precio">
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Descuento
+                            </span>
+
+                            <span class="descuento">
+                                {{ precio.descuento }}%
+                            </span>
+
+                        </div>
+
+
+                        <div class="separador"></div>
+
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Observación
+                            </span>
+
+                            <p>
+                                {{ precio.observacion }}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="/servicios/" class="boton">
+                        Ver servicio
+                    </a>
+
+                </article>
+
+            {% empty %}
+
+                <div class="sin-precios">
+
+                    <h2>
+                        No hay precios disponibles
+                    </h2>
+
+                    <p>
+                        Actualmente no tenemos servicios con precios registrados.
+                    </p>
+
+                </div>
+
+            {% endfor %}
+
+        </section>
+
+
+        <!-- GIF -->
+
+        <section class="imagen-precio">
+
+            <img
+                src="{% static 'images/gif/precio.gif' %}"
+                alt="Precios de nuestros servicios"
+            >
+
+        </section>
+
+
+        <!-- BOTÓN VOLVER -->
+
+        <div class="volver">
+
+            <a href="/" class="boton-volver">
+                ← Volver al menú
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="pie">
+
+        <p>
+            © 2026 Retail. Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
