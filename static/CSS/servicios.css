@@ -8,7 +8,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #fbbf24, #f97316);
     min-height: 100vh;
     padding: 40px 20px;
     color: #333;
@@ -68,7 +68,7 @@ h1 {
 /* Nombre del servicio */
 
 .servicio h2 {
-    color: #667eea;
+    color: #b45309;
     margin-bottom: 20px;
     font-size: 1.5rem;
 }
@@ -86,7 +86,7 @@ h1 {
 
 .servicio .precio {
     font-size: 1.2rem;
-    color: #764ba2;
+    color: #d97706;
 }
 
 
@@ -104,7 +104,7 @@ nav a {
     display: inline-block;
 
     background-color: white;
-    color: #667eea;
+    color: #f59e0b;
 
     text-decoration: none;
     font-weight: bold;
@@ -120,7 +120,7 @@ nav a {
 /* Hover del botón */
 
 nav a:hover {
-    background-color: #667eea;
+    background-color: #f59e0b;
     color: white;
 
     transform: translateY(-3px);
