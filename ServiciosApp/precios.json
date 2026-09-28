@@ -1,0 +1,35 @@
+[
+    {
+        "model": "serviciosApp.precioservicio",
+        "pk": 1,
+        "fields": {
+            "servicio": 1,
+            "precio": "150000",
+            "moneda": "CLP",
+            "descuento": "10",
+            "observacion": "Precio válido para diseño web básico."
+        }
+    },
+    {
+        "model": "serviciosApp.precioservicio",
+        "pk": 2,
+        "fields": {
+            "servicio": 2,
+            "precio": "300000",
+            "moneda": "CLP",
+            "descuento": "15",
+            "observacion": "El precio final puede variar según los requerimientos del proyecto."
+        }
+    },
+    {
+        "model": "serviciosApp.precioservicio",
+        "pk": 3,
+        "fields": {
+            "servicio": 3,
+            "precio": "80000",
+            "moneda": "CLP",
+            "descuento": "5",
+            "observacion": "Incluye mantenimiento y actualizaciones básicas."
+        }
+    }
+]
