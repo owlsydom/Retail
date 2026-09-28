@@ -1,0 +1,36 @@
+{% extends "base_catalogo.html" %}
+
+{% block title %}Disponibilidad | Minimarket{% endblock %}
+{% block body_class %}pagina-resumen{% endblock %}
+
+{% block content %}
+<section class="encabezado-pagina">
+    <span class="etiqueta">ESTADO DEL CATÁLOGO</span>
+    <h1>Resumen de disponibilidad</h1>
+    <p>Consulta el stock registrado para cada producto.</p>
+</section>
+
+<section class="resumen-metricas" aria-label="Resumen de inventario">
+    <article class="metrica"><span>Total de productos</span><strong>{{ total_productos }}</strong></article>
+    <article class="metrica metrica-stock"><span>Con disponibilidad</span><strong>{{ total_disponibles }}</strong></article>
+    <article class="metrica metrica-agotado"><span>Sin stock</span><strong>{{ total_agotados }}</strong></article>
+</section>
+
+<section class="productos-grid resumen-grid" aria-label="Disponibilidad por producto">
+    {% for producto in productos %}
+    <article class="producto-card{% if not producto.disponible %} sin-stock{% endif %}">
+        <div class="producto-cabecera">
+            <span class="producto-id">#{{ producto.id|stringformat:"02d" }}</span>
+            {% if producto.disponible %}
+            <span class="estado estado-disponible">Con stock</span>
+            {% else %}
+            <span class="estado estado-agotado">No disponible</span>
+            {% endif %}
+        </div>
+        <p class="producto-marca">{{ producto.marca }}</p>
+        <h2>{{ producto.nombre }}</h2>
+        <p class="producto-precio">${{ producto.precio }}</p>
+    </article>
+    {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,17 @@
+[
+  {"id": 1, "nombre": "Arroz grano largo 1 kg", "marca": "Tucapel", "precio": 1590, "disponible": true},
+  {"id": 2, "nombre": "Leche entera 1 L", "marca": "Colun", "precio": 1090, "disponible": true},
+  {"id": 3, "nombre": "Fideos espirales 400 g", "marca": "Carozzi", "precio": 890, "disponible": true},
+  {"id": 4, "nombre": "Aceite de maravilla 900 ml", "marca": "Chef", "precio": 2290, "disponible": true},
+  {"id": 5, "nombre": "Azúcar 1 kg", "marca": "Iansa", "precio": 1290, "disponible": true},
+  {"id": 6, "nombre": "Harina sin polvos 1 kg", "marca": "Selecta", "precio": 1090, "disponible": true},
+  {"id": 7, "nombre": "Té negro 20 unidades", "marca": "Supremo", "precio": 1390, "disponible": true},
+  {"id": 8, "nombre": "Café instantáneo 170 g", "marca": "Nescafé", "precio": 6490, "disponible": true},
+  {"id": 9, "nombre": "Galletas Tritón 126 g", "marca": "Nestlé", "precio": 990, "disponible": true},
+  {"id": 10, "nombre": "Atún lomitos 160 g", "marca": "San José", "precio": 1790, "disponible": true},
+  {"id": 16, "nombre": "Queso mantecoso 250 g", "marca": "Colun", "precio": 2890, "disponible": false},
+  {"id": 17, "nombre": "Yogur batido 125 g", "marca": "Soprole", "precio": 550, "disponible": false},
+  {"id": 18, "nombre": "Pan de molde 680 g", "marca": "Ideal", "precio": 2390, "disponible": false},
+  {"id": 19, "nombre": "Pasta dental 90 g", "marca": "Colgate", "precio": 1590, "disponible": false},
+  {"id": 20, "nombre": "Papel higiénico 4 rollos", "marca": "Confort", "precio": 2190, "disponible": false}
+]

@@ -1,0 +1,47 @@
+{% extends "base_catalogo.html" %}
+{% load static %}
+
+{% block title %}El negocio | Minimarket{% endblock %}
+{% block body_class %}pagina-negocio{% endblock %}
+
+{% block content %}
+<section class="encabezado-pagina">
+    <span class="etiqueta">MINIMARKET</span>
+    <h1>Un minimarket cercano a ti</h1>
+    <p>Lo esencial para tu hogar, con una atención amable y de confianza.</p>
+</section>
+
+<section class="informacion-grid" aria-label="Información del negocio">
+    <article class="panel-informacion">
+        <span class="panel-numero">01</span>
+        <h2>Quiénes somos</h2>
+        <p>Somos un minimarket de barrio enfocado en ofrecer productos de uso diario y una experiencia de compra simple, cercana y confiable.</p>
+    </article>
+    <article class="panel-informacion">
+        <span class="panel-numero">02</span>
+        <h2>Servicio al cliente</h2>
+        <p>Te orientamos para encontrar lo que buscas y revisamos contigo la disponibilidad de cada producto del catálogo.</p>
+    </article>
+    <article class="panel-informacion panel-contacto">
+        <span class="panel-numero">03</span>
+        <h2>Contáctanos</h2>
+        <p>Para consultas sobre productos o disponibilidad, acércate a nuestro local y nuestro equipo te ayudará.</p>
+        <a href="/categorias/volumen/">Revisar productos <span aria-hidden="true">→</span></a>
+    </article>
+</section>
+
+<section class="marcas">
+    <div class="seccion-titulo">
+        <div><span class="etiqueta">NUESTRO CATÁLOGO</span><h2>Marcas que encontrarás</h2></div>
+        <a href="/categorias/volumen/">Ver productos <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="marcas-grid">
+        {% for marca in marcas %}
+        <article class="marca-card">
+            <img src="{% static marca.imagen %}" alt="Marca {{ marca.nombre }}" loading="lazy">
+            <span>{{ marca.descripcion }}</span>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

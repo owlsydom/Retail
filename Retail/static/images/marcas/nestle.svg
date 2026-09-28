@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" role="img" aria-labelledby="title">
+  <title id="title">Nestlé</title>
+  <rect width="320" height="100" rx="14" fill="#fff"/>
+  <circle cx="66" cy="50" r="27" fill="#e9f1fb"/>
+  <path d="M53 58V40l13 18V40m8 18V40h13m-13 9h11" fill="none" stroke="#174a7e" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <text x="105" y="58" fill="#174a7e" font-family="Georgia,serif" font-size="38" font-weight="700">Nestlé</text>
+</svg>

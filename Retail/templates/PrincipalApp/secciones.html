@@ -1,0 +1,46 @@
+{% extends "base_catalogo.html" %}
+
+{% block title %}{{ nombre_catalogo }}{% endblock %}
+{% block body_class %}pagina-principal{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-contenido">
+        <span class="etiqueta">TU COMPRA DE CADA DÍA</span>
+        <h1>Bienvenido<br><span>{{ nombre_catalogo }}</span></h1>
+        <p>Productos esenciales, buenos precios y atención cercana para tu hogar.</p>
+        <div class="acciones">
+            <a class="boton boton-principal" href="/categorias/volumen/">Explorar productos</a>
+            <a class="boton boton-secundario" href="/negocio/">Conocer el minimarket</a>
+        </div>
+    </div>
+    <div class="hero-visual">
+        <img class="imagen-portada" src="{{ imagen_portada }}" alt="Frutas y productos frescos en un minimarket" fetchpriority="high">
+        <span class="cable cable-uno" aria-hidden="true"></span>
+        <span class="cable cable-dos" aria-hidden="true"></span>
+        <span class="estrella" aria-hidden="true">★</span>
+        <div class="nota-flotante">
+            <span class="nota-icono" aria-hidden="true">✦</span>
+            <span><strong>Te damos:</strong><small>Calidad y confianza</small></span>
+        </div>
+    </div>
+</section>
+
+<section class="secciones" aria-label="Secciones del catálogo">
+    <a class="seccion seccion-negocio" href="/negocio/">
+        <span class="seccion-icono" aria-hidden="true">⌂</span>
+        <span class="seccion-texto"><strong>El negocio</strong><small>Conoce quiénes somos y cómo atenderte.</small></span>
+        <span class="flecha" aria-hidden="true">→</span>
+    </a>
+    <a class="seccion seccion-productos" href="/categorias/volumen/">
+        <span class="seccion-icono" aria-hidden="true">▦</span>
+        <span class="seccion-texto"><strong>Productos</strong><small>Revisa el catálogo completo y su disponibilidad.</small></span>
+        <span class="flecha" aria-hidden="true">→</span>
+    </a>
+    <a class="seccion seccion-resumen" href="/categorias/resumen/">
+        <span class="seccion-icono" aria-hidden="true">✓</span>
+        <span class="seccion-texto"><strong>Disponibilidad</strong><small>Consulta el resumen de productos con stock.</small></span>
+        <span class="flecha" aria-hidden="true">→</span>
+    </a>
+</section>
+{% endblock %}

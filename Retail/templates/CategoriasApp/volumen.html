@@ -1,0 +1,61 @@
+{% extends "base_catalogo.html" %}
+
+{% block title %}Productos | Minimarket{% endblock %}
+{% block body_class %}pagina-volumen{% endblock %}
+
+{% block content %}
+<section class="encabezado-pagina encabezado-catalogo">
+    <div>
+        <span class="etiqueta">CATÁLOGO</span>
+        <h1>Productos del minimarket</h1>
+        <p>{{ productos|length }} productos disponibles en el catálogo.</p>
+    </div>
+    <a class="boton boton-principal" href="/categorias/resumen/">Ver disponibilidad</a>
+</section>
+
+<section class="herramientas-catalogo" aria-label="Buscar productos">
+    <label for="buscar-producto">Buscar por nombre o marca</label>
+    <input id="buscar-producto" type="search" placeholder="Ej.: leche, Colun" autocomplete="off">
+    <span id="resultado-busqueda" aria-live="polite">{{ productos|length }} productos</span>
+</section>
+
+<section class="productos-grid" id="productos-grid" aria-label="Listado de productos">
+    {% for producto in productos %}
+    <article class="producto-card{% if not producto.disponible %} sin-stock{% endif %}" data-busqueda="{{ producto.nombre|lower }} {{ producto.marca|lower }}">
+        <div class="producto-cabecera">
+            <span class="producto-id">#{{ producto.id|stringformat:"02d" }}</span>
+            {% if producto.disponible %}
+            <span class="estado estado-disponible">Disponible</span>
+            {% else %}
+            <span class="estado estado-agotado">Sin stock</span>
+            {% endif %}
+        </div>
+        <p class="producto-marca">{{ producto.marca }}</p>
+        <h2>{{ producto.nombre }}</h2>
+        <p class="producto-precio">${{ producto.precio }}</p>
+    </article>
+    {% endfor %}
+</section>
+<p class="sin-resultados" id="sin-resultados" hidden>No encontramos productos con ese nombre o marca.</p>
+
+<script>
+    const campoBusqueda = document.querySelector('#buscar-producto');
+    const tarjetas = [...document.querySelectorAll('.producto-card')];
+    const contadorBusqueda = document.querySelector('#resultado-busqueda');
+    const avisoSinResultados = document.querySelector('#sin-resultados');
+
+    campoBusqueda.addEventListener('input', () => {
+        const consulta = campoBusqueda.value.trim().toLocaleLowerCase('es');
+        let visibles = 0;
+
+        tarjetas.forEach((tarjeta) => {
+            const coincide = tarjeta.dataset.busqueda.includes(consulta);
+            tarjeta.hidden = !coincide;
+            visibles += Number(coincide);
+        });
+
+        contadorBusqueda.textContent = `${visibles} ${visibles === 1 ? 'producto' : 'productos'}`;
+        avisoSinResultados.hidden = visibles !== 0;
+    });
+</script>
+{% endblock %}
